@@ -66,8 +66,8 @@ map <leader>i <Action>(ShowErrorDescription)
 map <leader>t <Action>(SelectInProjectView)
 " order
 map <leader>o <Action>(ReformatCode)
-" annotate
-map <leader>a <Action>(Annotate)
+" actions
+map <leader>a <Action>(GoToAction)
 " usages
 map <leader>u <Action>(FindUsages)
 " number
@@ -90,6 +90,14 @@ map <S-q> <Action>(CloseEditor)
 map <S-h> <Action>(PreviousTab)
 " move to next tab
 map <S-l> <Action>(NextTab)
+" comment by line
+map <leader>/ <Action>(CommentByLineComment)
+" comment by block
+map <leader><S-/> <Action>(CommentByBlockComment)
+" toggle terminal window
+map <leader>t <Action>(ActivateTerminalToolWindow)<CR>
+" open file in terminal
+map <leader><S-t> <Action>(Terminal.OpenInTerminal)
 
 " navigate errors
 map gj <Action>(GotoNextError)
