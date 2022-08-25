@@ -57,7 +57,7 @@ map <leader>c <Action>(BuildProject)
 " run Program
 map <leader>r <Action>(RunClass)
 " debug
-map <leader>d <Action>(Debug)
+:map <leader>d <Action>(Debug)
 " stop
 map <leader>q <Action>(Stop)
 " inspect
@@ -128,6 +128,7 @@ map <C-A-k> <Action>(PrevSplitter)
 " refactor
 map <leader>jv <Action>(IntroduceVariable)
 map <leader>jm <Action>(ExtractMethod)
+map <leader>jc <Action>(IntroduceConstant)
 map <leader>gr <Action>(RenameElement)
 
 " Indent keeping selection
