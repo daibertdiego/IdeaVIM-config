@@ -2,6 +2,7 @@
 source ~/.vimrc
 
 Plug 'preservim/nerdtree'
+Plug 'easymotion/vim-easymotion'
 set ideajoin
 set vim-paragraph-motion
 set highlightedyank
@@ -10,12 +11,15 @@ set idearefactormode=keep
 set matchit
 set ideamarks
 set multiple-cursors
+set surround
 
 " easymotion
 set easymotion
 let g:EasyMotion_override_acejump = 0
 let g:EasyMotion_do_mapping = 0
-map z <Plug>(easymotion-s)
+map <Leader><Leader>F <Plug>(easymotion-s)
+map <Leader><Leader>f <Plug>(easymotion-f)
+" map <Leader> <Plug>(easymotion-prefix)
 
 set clipboard=unnamedplus
 set ignorecase
@@ -37,20 +41,19 @@ nnoremap <CR> :noh<CR><CR>
 vnoremap p "_dP
 
 " jetbrains smart select/unselect
-" nmap s <Action>(EditorSelectWord)
-" nmap S <Action>(EditorUnSelectWord)
-" vmap s <Action>(EditorSelectWord)
-" vmap S <Action>(EditorUnSelectWord)
+nmap s <Action>(EditorSelectWord)
+nmap S <Action>(EditorUnSelectWord)
+vmap s <Action>(EditorSelectWord)
+vmap S <Action>(EditorUnSelectWord)
 
 " vim surround
-set surround
-let g:surround_no_mappings = 1
-nmap ds <Plug>DSurround
-nmap cs <Plug>CSurround
-nmap gs <Plug>YSurround
-vmap gs <Plug>VSurround
+" Basic Commands:
+" cs Change surrounding
+" cst Change surrounding tag
+" ds Delete surrounding
+" dst Delete surrounding tag
+" ys Surround text object
 
-"leader + mnemonic mappings
 
 " compile
 map <leader>c <Action>(BuildProject)
@@ -163,11 +166,18 @@ xnoremap Y y$
 set clipboard+=ideaput
 
 " Using arrow keys is far too ingrained in my muscle memory.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register without yanking it
+vnoremap <leader>p "_dP
